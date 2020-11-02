@@ -11,15 +11,15 @@ const app= express();
 
 const PORT = process.env.PORT || 8080;
 
-// app.use(express.static("public"));
-// app.use(express.urlencoded({extended:true}));
-// app.use(express.json());
+app.use(express.static("public"));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// app.use(routes);
-console.log(routes);
+app.use(routes);
+// console.log(routes);
 
 db.sequelize.sync().then(function(){
     app.listen(PORT, function(){
