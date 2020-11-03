@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const handlebars = require('express-handlebars');
 // const mysql = require('mysql2');
@@ -9,7 +11,7 @@ const routes = require('./routes');
 
 const app= express();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT
 
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
