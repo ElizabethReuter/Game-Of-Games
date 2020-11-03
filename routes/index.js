@@ -9,28 +9,50 @@ const axios = require('axios');
 //localhost8080/
 router.route('/')
     .get(function(req, res) {
-        axios.get("https://www.boardgameatlas.com/api/search?order_by=popularity&ascending=false&pretty=true&client_id=JLBr5npPhV").then(function(res){
-            res.render('index', {res});
-            console.log(res);
+        axios.get("https://www.boardgameatlas.com/api/search?order_by=popularity&ascending=false&pretty=true&client_id=JLBr5npPhV").then(function(data){
+            // res.render('index', {res});
+            // console.log("error", data);
         })
-        // get the burger data
-        // db.Burger.findAll({}).then(function(burgerData) {
-        //     res.render('index', { burgers: burgerData })
-        // })
-        
     });
 
-router.route('/').get(function(req,res){
-    axios.get("https://www.boardgameatlas.com/api/reviews?pretty=true&client_id=Yulk2IjBB9").then(function(res){
-        res.render('index', {res});
-        console.log(res);
-    })
-})
+router.route('/api/search/:name').get(async function(req, res){
+    let gameName = req.params.name
+    let searchResult = await searchByName(gameName)
+    res.send(searchResult)
+});
 
+router.route('/api/search/:year').get(async function(req, res){
+    let gameYear = req.params.year
+    let searchResult = await searchByYear(gameYear)
+    res.send(searchResult)
+});
+
+// search by name 
+
+async function searchByName(name) {
+    try {
+        let clientId = "Yulk2IjBB9"
+        let {data}= await axios.get(`https://api.boardgameatlas.com/api/search?name=${name}&pretty=true&client_id=${clientId}`);
+        return data; 
+    } catch (error) {
+        console.log(error);
+    }
+ 
+};
+
+async function searchByYear(year) {
+    try {
+        let clientId = "Yulk2IjBB9"
+        let {data}= await axios.get(`https://api.boardgameatlas.com/api/search?year_published=${year}&pretty=true&client_id=${clientId}`);
+        return data;
+    } catch (error){
+        console.log(error);
+    }
+};
 //localhost8080/garbledegook
 //no known route is hit is his send default
-router.use(function(req, res) {
-    res.render('404', {error: "This aint the spot"})
-});
+// router.use(function(req, res) {
+//     res.render('404', {error: "This aint the spot"})
+// });
 
 module.exports = router;
