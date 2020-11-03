@@ -20,6 +20,13 @@ router.route('/')
         
     });
 
+router.route('/').get(function(req,res){
+    axios.get("https://www.boardgameatlas.com/api/reviews?pretty=true&client_id=Yulk2IjBB9").then(function(res){
+        res.render('index', {res});
+        console.log(res);
+    })
+})
+
 //localhost8080/garbledegook
 //no known route is hit is his send default
 router.use(function(req, res) {
