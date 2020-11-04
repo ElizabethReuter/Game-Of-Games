@@ -12,12 +12,18 @@ const axios = require('axios');
 //localhost8080/
 router.route('/')
     .get(function(req, res) {
-        axios.get("https://www.boardgameatlas.com/api/search?order_by=popularity&ascending=false&pretty=true&client_id=JLBr5npPhV").then(function(data){
-            res.render('index', {res});
-            // console.log("error", data);
+            res.render('index');
+    });
+// added post route for user input to database, see below:
+router.route('/api/new')
+    .post(function(req, res){
+        console.log(req.body)
+        db.Boardgames.create({
+            game: req.body.name
+        }).then(function(){
+            console.log("added")
         })
     });
-
 router.route('/api/search/:data').get(async function(req, res){
     let gameData = JSON.parse(req.params.data)
     let searchResult = await searchByAll(gameData);
