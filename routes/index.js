@@ -1,3 +1,6 @@
+// IMPORTANT!!! URL 
+// https://api.boardgameatlas.com/api/search?name=${name}&pretty=true&client_id=Yulk2IjBB9&year_published=${yearPublished}&min_players=${minPlayers}&max_players=${maxPlayers}&min_playtime=$(minPlaytime}&max_playtime=${maxPlaytime}&min_age=${minAge}
+
 // const apiRoutes = require('./api');
 const db = require('../models');
 const router = require('express').Router();
@@ -10,18 +13,18 @@ const axios = require('axios');
 router.route('/')
     .get(function(req, res) {
         axios.get("https://www.boardgameatlas.com/api/search?order_by=popularity&ascending=false&pretty=true&client_id=JLBr5npPhV").then(function(data){
-            // res.render('index', {res});
+            res.render('index', {res});
             // console.log("error", data);
         })
     });
 
-router.route('/api/search/:name').get(async function(req, res){
+router.route('/api/searchName/:name').get(async function(req, res){
     let gameName = req.params.name
     let searchResult = await searchByName(gameName)
     res.send(searchResult)
 });
 
-router.route('/api/search/:year').get(async function(req, res){
+router.route('/api/searchYear/:year').get(async function(req, res){
     let gameYear = req.params.year
     let searchResult = await searchByYear(gameYear)
     res.send(searchResult)
@@ -49,10 +52,5 @@ async function searchByYear(year) {
         console.log(error);
     }
 };
-//localhost8080/garbledegook
-//no known route is hit is his send default
-// router.use(function(req, res) {
-//     res.render('404', {error: "This aint the spot"})
-// });
 
 module.exports = router;
