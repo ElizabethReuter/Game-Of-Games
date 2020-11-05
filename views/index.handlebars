@@ -1,61 +1,61 @@
-<section id="userInput">
-    <div class="card-content gameCard">
-        <div class="content gameFinder">
-            <label>Name of Game</label>
-            <input type="text" placeholder="Enter Game" id="userInputName">
-            <div class="game-container">
-                <div id="gameDiv">
-                    <!-- Game List Results -->
+<div class="row">
+    <div class="jumbotron col-md-6">
+        <section id="userInput">
+            <div class="card-content gameCard">
+                <div class="content gameFinder">
+                    <label>Name of Game</label>
+                    <input type="text" placeholder="Enter Game" id="userInputName">
+                    <div class="game-container">
+                        <div id="gameDiv">
+                            <!-- Game List Results -->
+                        </div>
+                    </div>
                 </div>
+                {{!-- <br> --}}
+                <div class="card content gameYear"></div>
+                <label>Year of Publication</label>
+                <input type="text" placeholder="Enter Year Published" id="userInputYear">
+                <div class="game-container-year"></div>
+                <div id="game-div-year"></div>
             </div>
-        </div>
-        <br>
-        <div class="card content gameYear"></div>
-        <label>Year of Publication</label>
-        <input type="text" placeholder="Enter Year Published" id="userInputYear">
-        <div class="game-container-year"></div>
-        <div id="game-div-year"></div>
-        <br>
+            {{!-- <br> --}}
+            <div class="card content minPlayers"></div>
+            <label>Minimum Number of Players</label>
+            <input type="text" placeholder="Enter Min Players" id="minNumOfPlayers">
+            <div class="game-container-min-players"></div>
+            <div id="game-div-min-players"></div>
+            <br>
 
-        <div class="card content minPlayers"></div>
-        <label>Minimum Number of Players</label>
-        <input type="text" placeholder="Enter Min Players" id="minNumOfPlayers">
-        <div class="game-container-min-players"></div>
-        <div id="game-div-min-players"></div>
-        <br>
-
-        <div class="card content maxPlayers"></div>
-        <label>Maximum Number of Players</label>
-        <input type="text" placeholder="Enter Max Players" id="maxNumOfPlayers">
-        <div class="game-container-max-players"></div>
-        <div id="game-div-max-players"></div>
-        <br>
-
-        <div class="card content minTime"></div>
-        <label>Minimum Playtime</label>
-        <input type="text" placeholder="Enter Minimum Time" id="minTime">
-        <div class="game-container-min-time"></div>
-        <div id="game-div-min-time"></div>
-        <br>
-
-        <div class="card content maxTime"></div>
-        <label>Maximum Playtime</label>
-        <input type="text" placeholder="Enter Maximum Time" id="maxTime">
-        <div class="game-container-max-time"></div>
-        <div id="game-div-max-time"></div>
-        <br>
-
-        <div class="card content minAge"></div>
-        <label>Minimum Age</label>
-        <input type="text" placeholder="Enter Minimum Age" id="minAge">
-        <div class="game-container-min-age"></div>
-        <div id="game-div-min-age"></div>
-        <br>
-
-
-        <button class="button" id="gameBtn">Submit</button>
-        <h2>Game Results: </h2>
-            <div id="gameResults"></div>
+            <div class="card content maxPlayers"></div>
+            <label>Maximum Number of Players</label>
+            <input type="text" placeholder="Enter Max Players" id="maxNumOfPlayers">
+            <div class="game-container-max-players"></div>
+            <div id="game-div-max-players"></div>
+            {{!-- <br> --}}
+            <div class="card content minTime"></div>
+            <label>Minimum Playtime</label>
+            <input type="text" placeholder="Enter Minimum Time" id="minTime">
+            <div class="game-container-min-time"></div>
+            <div id="game-div-min-time"></div>
+            {{!-- <br> --}}
+            <div class="card content maxTime"></div>
+            <label>Maximum Playtime</label>
+            <input type="text" placeholder="Enter Maximum Time" id="maxTime">
+            <div class="game-container-max-time"></div>
+            <div id="game-div-max-time"></div>
+            {{!-- <br> --}}
+            <div class="card content minAge"></div>
+            <label>Minimum Age</label>
+            <input type="text" placeholder="Enter Minimum Age" id="minAge">
+            <div class="game-container-min-age"></div>
+            <div id="game-div-min-age"></div>
+            {{!-- <br> --}}
     </div>
+    </section>
 
-</section>
+    <div class="jumbotron col-md-6">
+        <button class="button" id="gameBtn">Submit</button>
+        <h2 class="gameResults">Game Results: </h2>
+        <div id="gameResults"></div>
+    </div>
+</div>
