@@ -8,8 +8,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true
         },
         gameId: {
-            type: DataTypes.STRING,
-            unique: true
+            type: DataTypes.STRING
+            // unique: true
         }
     });
     return Boardgames;
