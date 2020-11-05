@@ -1,6 +1,6 @@
 const apiKey = "Yulk2IjBB9"
 const array = [];
-console.log("======================================");
+// console.log("======================================");
 // const array = [];
 $('#gameBtn').on('click', function (data) {
     console.log("button clicked!!!");
@@ -41,7 +41,7 @@ $('#gameBtn').on('click', function (data) {
             var newGame = $("<li>")
             newGame.text(res.games[i].name)
 
-            var newGameBtn = $("<button>")
+            var newGameBtn = $(`<button class="addGame">`)
             newGameBtn.text("Add me to List of Games");
 
             newDiv.append(newGame);
@@ -52,8 +52,8 @@ $('#gameBtn').on('click', function (data) {
 
 });
 // on click for our post method (users adding to database)
-$(document).on("click", "button", function(){
-    console.log(`you have added ${$(this).prev().text()} to your list!`)
+$(document).on("click", ".addGame", function(){
+    // console.log(`you have added ${$(this).prev().text()} to your list!`)
     let name = $(this).prev().text()
     $.ajax({
         url: `/api/new`,
