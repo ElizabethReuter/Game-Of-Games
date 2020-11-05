@@ -5,7 +5,7 @@
  }
 
 .nav-wrapper {
-    background-color: rgba(26, 26, 218, 0.705);
+    background-color: rgb(54, 13, 119);
 }
 
 .page-footer {
@@ -19,15 +19,25 @@
     font-size: xx-large;
 }
 
+.saved-game {
+    font-family: 'Orbitron', sans-serif;
+}
+
 .gameResults {
     font-family: 'Orbitron', sans-serif;
 }
 
 #gameResults {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Source Serif Pro', serif;
 }
 
 .addGame{
     margin-left: 12px;
+}
+
+.logo {
+    align-self: start;
+    max-width: 100px;
+    max-height: 100px;
 }
 

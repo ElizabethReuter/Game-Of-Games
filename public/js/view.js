@@ -41,9 +41,9 @@ $('#gameBtn').on('click', function (data) {
             var newGame = $("<li>")
             newGame.text(res.games[i].name)
 
-            var newGameBtn = $(`<button class="addGame" onclick="style.display = 'none'" data-id=${res.games[i].id}>`)
-            newGameBtn.text("Add me to List of Games");
 
+            var newGameBtn = $(`<button class="addGame" onclick="style.display = 'none'" data-id=${res.games[i].id}>`)
+            newGameBtn.append(`<i class="fa fa-floppy-o" aria-hidden="true"></i>`);
             newDiv.append(newGame);
             newDiv.append(newGameBtn);
             $("#gameResults").append(newDiv)
@@ -62,5 +62,15 @@ $(document).on("click", ".addGame", function(){
         data: { name, id }
     }).then(function(res){
         console.log("added")
+    })
+});
+
+$(document).on("click", "#savedLink", function(){
+    console.log("savedLink function is working");
+    $.ajax({
+        url: `/api/savedGame`,
+        method: `GET`,
+    }).then(function(res){
+        console.log("retrieved games")
     })
 });
