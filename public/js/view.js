@@ -42,7 +42,8 @@ $('#gameBtn').on('click', function (data) {
             newGame.text(res.games[i].name)
 
             var newGameBtn = $(`<button class="addGame" data-id=${res.games[i].id}>`)
-            newGameBtn.text("Add me to List of Games");
+            // newGameBtn.text("Add me to List of Games");
+            newGameBtn.append(`<i class="fa fa-floppy-o" aria-hidden="true"></i>`);
 
             newDiv.append(newGame);
             newDiv.append(newGameBtn);
