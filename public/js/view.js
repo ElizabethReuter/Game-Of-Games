@@ -41,7 +41,7 @@ $('#gameBtn').on('click', function (data) {
             var newGame = $("<li>")
             newGame.text(res.games[i].name)
 
-            var newGameBtn = $(`<button class="addGame" data-id=${res.games[i].id}>`)
+            var newGameBtn = $(`<button class="addGame" onclick="style.display = 'none'" data-id=${res.games[i].id}>`)
             newGameBtn.text("Add me to List of Games");
 
             newDiv.append(newGame);
