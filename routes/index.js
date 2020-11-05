@@ -19,7 +19,7 @@ router.route('/api/new')
     .post(function(req, res){
         console.log(req.body)
         db.Boardgames.create({
-            game: req.body.name
+            games: req.body.name
         }).then(function(){
             console.log("added")
         })
