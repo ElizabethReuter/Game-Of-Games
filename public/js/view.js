@@ -65,12 +65,12 @@ $(document).on("click", ".addGame", function(){
     })
 });
 
-$(document).on("click", "#savedLink", function(){
-    console.log("savedLink function is working");
-    $.ajax({
-        url: `/api/savedGame`,
-        method: `GET`,
-    }).then(function(res){
-        console.log("retrieved games")
-    })
-});
+// $(document).on("click", "#savedLink", function(){
+//     console.log("savedLink function is working");
+//     $.ajax({
+//         url: `/api/savedGame`,
+//         method: `GET`,
+//     }).then(function(res){
+//         console.log("retrieved games")
+//     })
+// });

@@ -34,12 +34,16 @@ router.route('/api/search/:data').get(async function(req, res){
 
 router.route('/api/savedGame').get(function(req, res){
     db.Boardgames.findAll().then(function(data){
-        let savedGame = {
-            boardgame: data,
-
-        }
+//         let savedGame = {
+            // boardgame: data,
+// console.log(data);
+//         }
+        // console.log(data[0].dataValues);
+        data = data.map(e=>e.dataValues)
         console.log(data);
-        res.render("mylist", savedGame)
+        res.render("mylist", {
+            boardgame: data
+        })
     })
 });
 
