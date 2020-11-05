@@ -1,1 +1,29 @@
- 
+ .jumbotron {
+     background-color: white;
+     font-family: 'Orbitron', sans-serif;
+
+ }
+
+.nav-wrapper {
+    background-color: rgba(26, 26, 218, 0.705);
+}
+
+.page-footer {
+    background-color: rgba(26, 26, 218, 0.705);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.white-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.gameResults {
+    font-family: 'Orbitron', sans-serif;
+}
+
+#gameResults {
+    font-family: 'Orbitron', sans-serif;
+}
+
