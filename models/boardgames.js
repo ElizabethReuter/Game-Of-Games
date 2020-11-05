@@ -6,6 +6,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             description: DataTypes.TEXT,
             allowNull: true
+        },
+        gameId: {
+            type: DataTypes.STRING,
+            unique: true
         }
     });
     return Boardgames;
