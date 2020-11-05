@@ -41,7 +41,7 @@ $('#gameBtn').on('click', function (data) {
             var newGame = $("<li>")
             newGame.text(res.games[i].name)
 
-            var newGameBtn = $(`<button class="addGame">`)
+            var newGameBtn = $(`<button class="addGame" data-id=${res.games[i].id}>`)
             newGameBtn.text("Add me to List of Games");
 
             newDiv.append(newGame);
@@ -55,10 +55,11 @@ $('#gameBtn').on('click', function (data) {
 $(document).on("click", ".addGame", function(){
     // console.log(`you have added ${$(this).prev().text()} to your list!`)
     let name = $(this).prev().text()
+    let id = $(this).attr("data-id")
     $.ajax({
         url: `/api/new`,
         method: `POST`,
-        data: { name }
+        data: { name, id }
     }).then(function(res){
         console.log("added")
     })
