@@ -1,15 +1,7 @@
-// IMPORTANT!!! URL 
-// https://api.boardgameatlas.com/api/search?name=${name}&pretty=true&client_id=Yulk2IjBB9&year_published=${yearPublished}&min_players=${minPlayers}&max_players=${maxPlayers}&min_playtime=$(minPlaytime}&max_playtime=${maxPlaytime}&min_age=${minAge}
-
-// const apiRoutes = require('./api');
 const db = require('../models');
 const router = require('express').Router();
 const axios = require('axios');
 
-// localhost:80080/api
-// router.use('/api', apiRoutes);
-
-//localhost8080/
 router.route('/')
     .get(function(req, res) {
             res.render('index');
@@ -34,11 +26,6 @@ router.route('/api/search/:data').get(async function(req, res){
 
 router.route('/api/savedGame').get(function(req, res){
     db.Boardgames.findAll().then(function(data){
-//         let savedGame = {
-            // boardgame: data,
-// console.log(data);
-//         }
-        // console.log(data[0].dataValues);
         data = data.map(e=>e.dataValues)
         console.log(data);
         res.render("mylist", {
@@ -52,7 +39,6 @@ async function searchByAll(gameData) {
         let clientId = "Yulk2IjBB9"
         let {name, yearPublished, minPlayers, maxPlayers, minPlaytime, maxPlaytime, minAge} = gameData;
         let {data}= await axios.get(`https://api.boardgameatlas.com/api/search?name=${name}&pretty=true&client_id=${clientId}&year_published=${yearPublished}&min_players=${minPlayers}&max_players=${maxPlayers}&min_playtime=${minPlaytime}&max_playtime=${maxPlaytime}&min_age=${minAge}`);
-        // console.log(data);
         return data; 
     } catch (error) {
         console.log(error);

@@ -2,8 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const handlebars = require('express-handlebars');
-// const mysql = require('mysql2');
-// const Sequelize = require('sequelize');
+
 
 const db = require('./models');
 
@@ -25,13 +24,9 @@ app.engine("handlebars", handlebars({ defaultLayout: "main", runtimeOptions: {
 app.set("view engine", "handlebars");
 
 app.use(routes);
-// console.log(routes);
 
 db.sequelize.sync({}).then(function(){
     app.listen(PORT, function(){
         console.log("Server listening on http://localhost:" + PORT);
     });
 });
-
-// module.exports = routes;
-// force: true 
