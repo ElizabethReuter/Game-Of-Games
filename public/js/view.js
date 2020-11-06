@@ -1,12 +1,10 @@
 const apiKey = "Yulk2IjBB9"
 const array = [];
-// console.log("======================================");
-// const array = [];
+
 $('#gameBtn').on('click', function (data) {
     console.log("button clicked!!!");
     data.preventDefault();
     var userInputName = $('#userInputName').val();
-    // console.log(userInputName);
     var userInputYear = $('#userInputYear').val();
     // added functionality to the following user input, see below:
     var minNumOfPlayers = $('#minNumOfPlayers').val();
@@ -14,9 +12,7 @@ $('#gameBtn').on('click', function (data) {
     var minTime = $('#minTime').val();
     var maxTime = $('#maxTime').val();
     var minAge = $('minAge').val();
-    // console.log(userInputYear);
-    // var gameQuery = "http://api.boardgameatlas.com/api/search?name=${name}&pretty=true&client_id=Yulk2IjBB9&year_published=${yearPublished}&min_players=${minPlayers}&max_players=${maxPlayers}&min_playtime=$(minPlaytime}&max_playtime=${maxPlaytime}&min_age=${minAge}";
-
+    
     let searchGameParams = {
         name: userInputName,
         yearPublished: userInputYear,
@@ -53,7 +49,6 @@ $('#gameBtn').on('click', function (data) {
 });
 // on click for our post method (users adding to database)
 $(document).on("click", ".addGame", function(){
-    // console.log(`you have added ${$(this).prev().text()} to your list!`)
     let name = $(this).prev().text()
     let id = $(this).attr("data-id")
     $.ajax({
@@ -64,13 +59,3 @@ $(document).on("click", ".addGame", function(){
         console.log("added")
     })
 });
-
-// $(document).on("click", "#savedLink", function(){
-//     console.log("savedLink function is working");
-//     $.ajax({
-//         url: `/api/savedGame`,
-//         method: `GET`,
-//     }).then(function(res){
-//         console.log("retrieved games")
-//     })
-// });
