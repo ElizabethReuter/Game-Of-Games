@@ -1,6 +1,9 @@
 ## Game Of Games
 As a table top gamer, I have accumulated too many boxes of board games to possibly remember every single one I own. Wouldn't it be nice to be able to refer to a master list of games while out shopping at your local board game store? It would accept user input for things such as name, min/max players, final scores, even track the results of games.
 
+## Deployed Link
+https://fierce-dawn-26517.herokuapp.com/
+
 
 ## Tech/framework used
   Mysql
