@@ -35,5 +35,7 @@ All ideas are welcomed!
 
 ## Credits
 Erik Tomlinson
+
 Elizabeth Reuter
+
 Max Jeanty
